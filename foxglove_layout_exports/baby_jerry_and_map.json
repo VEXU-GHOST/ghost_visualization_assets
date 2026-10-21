@@ -1,0 +1,187 @@
+{
+  "configById": {
+    "3D!495ebdz": {
+      "cameraState": {
+        "perspective": true,
+        "distance": 3.3216676797338356,
+        "phi": 48.21086403003507,
+        "thetaOffset": 9.540492477014825,
+        "targetOffset": [
+          0.7939572871878421,
+          1.11123574982516,
+          -0.1876577033876931
+        ],
+        "target": [
+          0,
+          0,
+          0
+        ],
+        "targetOrientation": [
+          0,
+          0,
+          0,
+          1
+        ],
+        "fovy": 45,
+        "near": 0.001,
+        "far": 5000
+      },
+      "followMode": "follow-none",
+      "scene": {
+        "enableStats": false,
+        "meshUpAxis": "z_up",
+        "transforms": {
+          "showLabel": false
+        },
+        "syncCamera": false,
+        "ignoreColladaUpAxis": false
+      },
+      "transforms": {
+        "frame:map": {
+          "visible": true
+        },
+        "frame:camera_link": {
+          "visible": true
+        },
+        "frame:imu_link": {
+          "visible": true
+        },
+        "frame:lidar_link": {
+          "visible": true
+        },
+        "frame:base_link": {
+          "visible": true
+        },
+        "frame:odom": {
+          "visible": true
+        }
+      },
+      "topics": {
+        "/scan": {
+          "visible": false,
+          "colorField": "intensity",
+          "colorMode": "colormap",
+          "colorMap": "turbo"
+        },
+        "/viz/imu_accel": {
+          "visible": false
+        },
+        "/viz/imu_accel_filtered": {
+          "visible": false
+        },
+        "/viz/imu_gyro_filtered": {
+          "visible": false
+        },
+        "/map": {
+          "visible": false
+        },
+        "/map_viz": {
+          "visible": true
+        },
+        "/move_base_simple/goal": {
+          "visible": false
+        },
+        "/viz/imu_gyro": {
+          "visible": false
+        },
+        "/set_pose": {
+          "visible": false
+        },
+        "/set_pf_pose": {
+          "visible": false
+        },
+        "/estimation_debug": {
+          "visible": true,
+          "color": "#f508eaff",
+          "showOutlines": true
+        },
+        "/estimation/pose": {
+          "visible": false
+        }
+      },
+      "layers": {
+        "grid": {
+          "visible": true,
+          "drawBehind": false,
+          "instanceId": "f234a939-df99-4d11-971c-0c68d7daa4c5",
+          "layerId": "foxglove.Grid",
+          "size": 10,
+          "divisions": 10,
+          "lineWidth": 1,
+          "color": "#248eff",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ]
+        },
+        "9610fd25-f739-401d-a734-44ce43ece1d7": {
+          "controlMode": "transforms",
+          "jointStatesTopic": "/joint_states",
+          "displayMode": "auto",
+          "fallbackColor": "#ffffff",
+          "showAxis": false,
+          "axisScale": 1,
+          "showOutlines": true,
+          "opacity": 1,
+          "visible": true,
+          "instanceId": "9610fd25-f739-401d-a734-44ce43ece1d7",
+          "layerId": "foxglove.Urdf",
+          "label": "URDF",
+          "sourceType": "filePath",
+          "url": "",
+          "filePath": "/home/giovonnie/ghost_visualization_assets/baby_jerry/urdf/baby_jerry.urdf",
+          "parameter": "",
+          "topic": "",
+          "framePrefix": "",
+          "order": 1
+        },
+        "f1c62c29-b503-4e9c-bb12-4b34910310ad": {
+          "controlMode": "transforms",
+          "jointStatesTopic": "",
+          "displayMode": "auto",
+          "fallbackColor": "#ffffff",
+          "showAxis": false,
+          "axisScale": 1,
+          "showOutlines": true,
+          "opacity": 1,
+          "visible": true,
+          "instanceId": "f1c62c29-b503-4e9c-bb12-4b34910310ad",
+          "layerId": "foxglove.Urdf",
+          "label": "URDF",
+          "sourceType": "filePath",
+          "url": "",
+          "filePath": "/home/giovonnie/ghost_visualization_assets/field_assembly/urdf/field_assembly.urdf",
+          "parameter": "",
+          "topic": "",
+          "framePrefix": "",
+          "order": 2
+        }
+      },
+      "publish": {
+        "type": "point",
+        "poseTopic": "/move_base_simple/goal",
+        "pointTopic": "/clicked_point",
+        "poseEstimateTopic": "/initialpose",
+        "poseEstimateXDeviation": 0.5,
+        "poseEstimateYDeviation": 0.5,
+        "poseEstimateThetaDeviation": 0.26179939
+      },
+      "synchronize": false,
+      "imageMode": {},
+      "followTf": "map",
+      "fixedFrame": "map"
+    }
+  },
+  "globalVariables": {},
+  "userNodes": {},
+  "playbackConfig": {
+    "speed": 1
+  },
+  "layout": "3D!495ebdz"
+}
