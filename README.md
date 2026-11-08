@@ -8,15 +8,36 @@ laptop. It is not a VEXU_GHOST submodule and is not needed on the robot.
 ## Baby Jerry
 
 `baby_jerry/urdf/baby_jerry.urdf` defines the links, joints, and mesh placement.
-`baby_jerry/meshes/` contains 25 binary STL meshes, with coordinates in meters.
+`baby_jerry/meshes/` contains binary STL meshes, with coordinates in meters.
 The model uses the reduced meshes and excludes the tank canister visual.
 Its three continuous joints are `revolute_1`, `revolute_2`, and `revolute_3`.
+
+The URDF draws only four merged meshes: `chassis_merged.stl` (everything that
+never moves, on the `root` link) and one STL per moving group
+(`revolute_1_merged.stl`, `revolute_2_merged.stl`, `revolute_3_merged.stl`, on
+each joint's child link). The other links remain in the URDF as empty frames so
+TF, joints, and inertials are unchanged. The individual part STLs were removed
+from the working tree once merged; they remain in git history. To regenerate the
+merged files, check out the pre-merge commit's `baby_jerry/` directory and run
+`tools/merge_static_meshes.py` (numpy only) on its URDF.
 
 Meshes use Git LFS. Install Git LFS before checking out this repository, then run:
 
 ```bash
 git lfs install --local
 git lfs pull
+```
+
+## Field
+
+`field_assembly/urdf/field_assembly.urdf` draws the field as six merged STLs
+(`field_assembly/meshes/field_merged_<rrggbb>.stl`), one per color so the red
+and blue goals stay distinguishable. Nothing on the field moves, so every part
+is merged onto the `field_origin` link. Generated with:
+
+```bash
+python3 tools/merge_static_meshes.py field_assembly/urdf/field_assembly.urdf \
+  --root field_origin --static-name field --by-color --out-urdf <new.urdf>
 ```
 
 ## Laptop setup (ROS 2 Humble)
