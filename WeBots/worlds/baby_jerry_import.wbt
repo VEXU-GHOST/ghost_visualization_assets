@@ -1,0 +1,36 @@
+#VRML_SIM R2025a utf8
+# Visual import test only. Restore gravity after adding collision geometry.
+WorldInfo {
+  basicTimeStep 16
+  gravity 0
+}
+Viewpoint {
+  orientation -0.577350 0.577350 0.577350 2.094395
+  position 1 1 1
+}
+Background {
+  skyColor [ 0.12 0.15 0.20 ]
+}
+DirectionalLight {
+  direction -1 -1 -2
+  intensity 1
+}
+Solid {
+  translation 0 0 -0.025
+  name "test_floor"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.45 0.45 0.45
+        roughness 1
+        metalness 0
+      }
+      geometry Box {
+        size 4 4 0.05
+      }
+    }
+  ]
+  boundingObject Box {
+    size 4 4 0.05
+  }
+}
