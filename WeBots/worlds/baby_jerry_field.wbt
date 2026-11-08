@@ -1,0 +1,85 @@
+#VRML_SIM R2025a utf8
+# Field visual import scene. No gravity or field collision geometry yet.
+# Coordinates match the original URDF's corner-origin map frame.
+WorldInfo {
+  basicTimeStep 16
+  gravity 0
+}
+Viewpoint {
+  orientation 0 0 1 0
+  position 1.828 1.828 6
+}
+Background {
+  skyColor [ 0.12 0.15 0.20 ]
+}
+DirectionalLight {
+  direction -1 -1 -2
+  intensity 1
+}
+Solid {
+  translation 1.828 1.828 0
+  name "VEXField"
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.647059 0.647059 0.647059
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [ "../../field_assembly/meshes/field_merged_a5a5a5.stl" ]
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.6 0.6 0.6
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [ "../../field_assembly/meshes/field_merged_999999.stl" ]
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.917647 0.917647 0.917647
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [ "../../field_assembly/meshes/field_merged_eaeaea.stl" ]
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.501961 0.501961 0.501961
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [ "../../field_assembly/meshes/field_merged_808080.stl" ]
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0.529412 0.882353
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [ "../../field_assembly/meshes/field_merged_0087e1.stl" ]
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0.235294 0.294118
+        roughness 1
+        metalness 0
+      }
+      geometry Mesh {
+        url [ "../../field_assembly/meshes/field_merged_ff3c4b.stl" ]
+      }
+    }
+  ]
+  physics NULL
+}
